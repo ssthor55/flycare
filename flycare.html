@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyCare - Your Skyway to Instant Rescue!</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url('plus-sign.png'); /* Replace with your image path */
+      background-size: cover; /* Adjust the size */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: rgba(76, 175, 80, 0.9); /* Slight transparency */
+      color: white;
+      padding: 40px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 3em;
+    }
+
+    /* Main Content */
+    main {
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+      margin: 0 auto;
+      max-width: 80%;
+      border-radius: 15px;
+    }
+
+    /* Form Styles */
+    form {
+      margin: 20px auto;
+      width: 300px;
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #book-btn {
+      background-color: #FF6347;
+      color: white;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    #book-btn:hover {
+      background-color: #FF4500;
+    }
+
+    #loading-message {
+      font-size: 1.2em;
+      color: #FF6347;
+      margin-top: 20px;
+    }
+
+    #response {
+      font-size: 1.2em;
+      color: #4CAF50;
+      margin-top: 20px;
+    }
+
+    /* About Section */
+    #about {
+      display: none; /* Initially hide the about section */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto;
+      max-width: 80%;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      position: relative;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" id="about-link">About</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </nav>
+    <h1>FlyCare: Your Skyway to Instant Rescue!</h1>
+    <p>Why drive when you can FLY? Get saved in style!</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Booking Section -->
+    <section id="booking">
+      <h2>One-Click Booking</h2>
+      <form id="booking-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        
+        <label for="location">Your Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location">
+        
+        <label for="country">Select Your Country:</label>
+        <select id="country">
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">UK</option>
+          <option value="Australia">Australia</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+          <option value="Japan">Japan</option>
+          <option value="Brazil">Brazil</option>
+          <option value="South Africa">South Africa</option>
+          <option value="Russia">Russia</option>
+          <option value="China">China</option>
+          <option value="Italy">Italy</option>
+          <option value="Spain">Spain</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Argentina">Argentina</option>
+        </select>
+        
+        <button type="button" id="book-btn">Book Your Flying Ambulance NOW!</button>
+        <p id="loading-message" style="display: none;">Processing your request...</p>
+        <p id="response"></p>
+      </form>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About FlyCare</h2>
+      <p>Powered by jet engines and dreams, FlyCare reaches 100 km/h in the blink of an eye, giving traffic a big "no thanks!"</p>
+      <p>FlyCare is designed for urban emergencies, ensuring rapid response and efficient medical transport, making it a vital addition to emergency services.</p>
+      <p>FlyCare will navigate through heavy traffic, operating at a height of 50-70 feet in the sky. With automatic altitude adjustment and advanced safety features, it guarantees quick medical response in Mumbai's urban challenges.</p>
+      <p>Equipped with giant propellers, a hybrid propulsion system, and futuristic medical facilities, FlyCare offers a unique and efficient solution for emergencies. It ensures comfort and safety for patients and crew alike.</p>
+      <p>The ambulance can accommodate at least 8 people and is designed to operate in remote areas, providing essential services where traditional ambulances may struggle.</p>
+      <p>FlyCare's estimated cruising speed is 100-150 km/h, covering significant distances quickly. The advanced battery technology supports rapid charging, ensuring readiness for immediate deployment.</p>
+      <p>With its innovative features, FlyCare stands out from conventional ambulances, revolutionizing emergency medical transport.</p>
+      <button id="back-btn">Back to Booking</button>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <p>&copy; 2024 FlyCare. All rights reserved. | Just for fun!</p>
+    <p>Email: vedant.naik.0408@gmail.com | Phone: +123 456 7890</p>
+  </footer>
+
+  <script>
+    // Toggle About section visibility
+    document.getElementById('about-link').addEventListener('click', function() {
+      document.getElementById('booking').style.display = 'none'; // Hide booking section
+      document.getElementById('about').style.display = 'block'; // Show about section
+    });
+
+    // Handle back button in the About section
+    document.getElementById('back-btn').addEventListener('click', function() {
+      document.getElementById('about').style.display = 'none'; // Hide about section
+      document.getElementById('booking').style.display = 'block'; // Show booking section
+    });
+
+    document.getElementById('book-btn').addEventListener('click', function() {
+      const name = document.getElementById('name').value;
+      const location = document.getElementById('location').value;
+
+      if (name && location) {
+        // Show loading message
+        document.getElementById('loading-message').style.display = 'block';
+
+        // Simulate a delay to make it feel real
+        setTimeout(function() {
+          document.getElementById('loading-message').style.display = 'none';
+          document.getElementById('response').innerHTML = `
+            <strong>Thanks for booking FlyCare!</strong><br>
+            FlyCare is your innovative solution for rapid medical emergencies, combining speed, safety, and comfort in one futuristic package.
+            Get ready to soar through the skies for life-saving rescues!
+          `;
+        }, 2000); // 2 seconds delay
+      } else {
+        document.getElementById('response').textContent = 'Please fill in your name and location.';
+      }
+    });
+  </script>
+</body>
+</html>
+
